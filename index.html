@@ -431,26 +431,100 @@
     /* ── GALLERY ── */
     .gallery { background: var(--dark-2); }
 
+    .gallery-hero {
+      max-width: 1100px;
+      margin: 0 auto 3rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .gallery-hero img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s;
+    }
+
+    .gallery-hero:hover img { transform: scale(1.03); }
+
+    .gallery-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 40%, rgba(13,13,13,0.85) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 2rem;
+    }
+
+    .gallery-hero-overlay span {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      gap: 1rem;
       max-width: 1100px;
       margin: 0 auto 2.5rem;
     }
 
-    .gallery-grid iframe {
-      width: 100% !important;
-      min-width: 0 !important;
-      border: none;
-      border-radius: 4px;
+    .gallery-card {
+      display: block;
+      text-decoration: none;
+      color: var(--white);
+      background: var(--dark);
+      border: 1px solid rgba(255,255,255,0.06);
+      padding: 1.75rem 1.5rem;
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative;
+      overflow: hidden;
     }
 
-    .gallery-grid .ig-embed-wrapper {
-      background: var(--dark-3);
-      border: 1px solid rgba(255,255,255,0.06);
-      overflow: hidden;
-      border-radius: 4px;
+    .gallery-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+
+    .gallery-card:hover { border-color: rgba(200,168,78,0.3); transform: translateY(-3px); }
+    .gallery-card:hover::before { transform: scaleX(1); }
+
+    .gallery-card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .gallery-card h4 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .gallery-card p {
+      font-size: 0.8rem;
+      color: var(--gray);
+      line-height: 1.5;
+      margin-bottom: 0.75rem;
+    }
+
+    .gallery-card .view-link {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      font-weight: 500;
     }
 
     .gallery-cta {
@@ -725,7 +799,8 @@
       section { padding: 4rem 1.25rem; }
       .hero-content { padding: 7rem 1.25rem 3rem; }
       .services-grid { grid-template-columns: 1fr; }
-      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-hero img { height: 300px; }
       .process-steps { grid-template-columns: 1fr; gap: 1rem; }
       .form-row { flex-direction: column; }
       .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
@@ -906,25 +981,50 @@
       <div class="section-divider"></div>
     </div>
 
+    <div class="gallery-hero fade-in">
+      <img src="images/hero.jpg" alt="Professional Construction & Landscaping - Brick restoration project in Toronto" loading="lazy">
+      <div class="gallery-hero-overlay">
+        <span>Brick Restoration &mdash; Toronto</span>
+      </div>
+    </div>
+
     <div class="gallery-grid fade-in">
-      <div class="ig-embed-wrapper">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/professional_construction_inc/p/DXAv6vAijN_/" data-instgrm-version="14" style="background:#1A1A1A; border:0; margin:0; padding:0; width:100%;"></blockquote>
-      </div>
-      <div class="ig-embed-wrapper">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/professional_construction_inc/p/DWc2ddGFe1b/" data-instgrm-version="14" style="background:#1A1A1A; border:0; margin:0; padding:0; width:100%;"></blockquote>
-      </div>
-      <div class="ig-embed-wrapper">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/professional_construction_inc/p/DWVFrKbihmq/" data-instgrm-version="14" style="background:#1A1A1A; border:0; margin:0; padding:0; width:100%;"></blockquote>
-      </div>
-      <div class="ig-embed-wrapper">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/professional_construction_inc/p/DWXyTsRFXoa/" data-instgrm-version="14" style="background:#1A1A1A; border:0; margin:0; padding:0; width:100%;"></blockquote>
-      </div>
-      <div class="ig-embed-wrapper">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/professional_construction_inc/p/DV9mYmYCgis/" data-instgrm-version="14" style="background:#1A1A1A; border:0; margin:0; padding:0; width:100%;"></blockquote>
-      </div>
-      <div class="ig-embed-wrapper">
-        <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/professional_construction_inc/p/DV8qjwoldR5/" data-instgrm-version="14" style="background:#1A1A1A; border:0; margin:0; padding:0; width:100%;"></blockquote>
-      </div>
+      <a href="https://www.instagram.com/professional_construction_inc/p/DXAv6vAijN_/" target="_blank" rel="noopener" class="gallery-card">
+        <span class="gallery-card-icon">&#9678;</span>
+        <h4>Brick Restoration</h4>
+        <p>Before &amp; after foundation brick repair in Downtown Toronto</p>
+        <span class="view-link">View on Instagram &rarr;</span>
+      </a>
+      <a href="https://www.instagram.com/professional_construction_inc/p/DWc2ddGFe1b/" target="_blank" rel="noopener" class="gallery-card">
+        <span class="gallery-card-icon">&#9635;</span>
+        <h4>Interior Renovation</h4>
+        <p>Complete interior remodel with new flooring, lighting &amp; sliding doors</p>
+        <span class="view-link">View on Instagram &rarr;</span>
+      </a>
+      <a href="https://www.instagram.com/professional_construction_inc/p/DWXyTsRFXoa/" target="_blank" rel="noopener" class="gallery-card">
+        <span class="gallery-card-icon">&#9638;</span>
+        <h4>Painting &amp; Prep</h4>
+        <p>Professional painting preparation and execution for homes</p>
+        <span class="view-link">View on Instagram &rarr;</span>
+      </a>
+      <a href="https://www.instagram.com/professional_construction_inc/p/DWVKc77lRdG/" target="_blank" rel="noopener" class="gallery-card">
+        <span class="gallery-card-icon">&#9649;</span>
+        <h4>Fence Installation</h4>
+        <p>Custom cedar fence build in Toronto with full landscaping</p>
+        <span class="view-link">View on Instagram &rarr;</span>
+      </a>
+      <a href="https://www.instagram.com/professional_construction_inc/p/DWVFrKbihmq/" target="_blank" rel="noopener" class="gallery-card">
+        <span class="gallery-card-icon">&#9681;</span>
+        <h4>Retaining Wall</h4>
+        <p>Before &amp; after retaining wall construction and repair</p>
+        <span class="view-link">View on Instagram &rarr;</span>
+      </a>
+      <a href="https://www.instagram.com/professional_construction_inc/p/DV9mYmYCgis/" target="_blank" rel="noopener" class="gallery-card">
+        <span class="gallery-card-icon">&#9633;</span>
+        <h4>Gazebo &amp; Cabana</h4>
+        <p>Custom backyard gazebo, deck &amp; landscape build in GTA</p>
+        <span class="view-link">View on Instagram &rarr;</span>
+      </a>
     </div>
 
     <div class="gallery-cta fade-in">
@@ -1046,7 +1146,6 @@
     </div>
   </footer>
 
-  <script async src="//www.instagram.com/embed.js"></script>
   <script>
     // Nav scroll effect
     const nav = document.getElementById('nav');
