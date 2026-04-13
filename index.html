@@ -431,100 +431,53 @@
     /* ── GALLERY ── */
     .gallery { background: var(--dark-2); }
 
-    .gallery-hero {
-      max-width: 1100px;
-      margin: 0 auto 3rem;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .gallery-hero img {
-      width: 100%;
-      height: 400px;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s;
-    }
-
-    .gallery-hero:hover img { transform: scale(1.03); }
-
-    .gallery-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(transparent 40%, rgba(13,13,13,0.85) 100%);
-      display: flex;
-      align-items: flex-end;
-      padding: 2rem;
-    }
-
-    .gallery-hero-overlay span {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
+      gap: 6px;
       max-width: 1100px;
       margin: 0 auto 2.5rem;
     }
 
-    .gallery-card {
-      display: block;
-      text-decoration: none;
-      color: var(--white);
-      background: var(--dark);
-      border: 1px solid rgba(255,255,255,0.06);
-      padding: 1.75rem 1.5rem;
-      transition: border-color 0.3s, transform 0.3s;
+    .gallery-item {
       position: relative;
       overflow: hidden;
+      aspect-ratio: 1;
+      cursor: pointer;
     }
 
-    .gallery-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
+    .gallery-item img {
       width: 100%;
-      height: 3px;
-      background: var(--gold);
-      transform: scaleX(0);
-      transition: transform 0.4s;
-    }
-
-    .gallery-card:hover { border-color: rgba(200,168,78,0.3); transform: translateY(-3px); }
-    .gallery-card:hover::before { transform: scaleX(1); }
-
-    .gallery-card-icon {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      transition: transform 0.5s;
     }
 
-    .gallery-card h4 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
+    .gallery-item:hover img { transform: scale(1.06); }
+
+    .gallery-item .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(transparent 50%, rgba(0,0,0,0.75) 100%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      display: flex;
+      align-items: flex-end;
+      padding: 1rem;
     }
 
-    .gallery-card p {
+    .gallery-item:hover .gallery-overlay { opacity: 1; }
+
+    .gallery-overlay span {
       font-size: 0.8rem;
-      color: var(--gray);
-      line-height: 1.5;
-      margin-bottom: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
     }
 
-    .gallery-card .view-link {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--gold);
-      font-weight: 500;
+    .gallery-feature {
+      grid-column: span 2;
+      aspect-ratio: 2/1;
     }
 
     .gallery-cta {
@@ -800,7 +753,7 @@
       .hero-content { padding: 7rem 1.25rem 3rem; }
       .services-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-hero img { height: 300px; }
+      .gallery-feature { aspect-ratio: auto; }
       .process-steps { grid-template-columns: 1fr; gap: 1rem; }
       .form-row { flex-direction: column; }
       .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
@@ -981,50 +934,55 @@
       <div class="section-divider"></div>
     </div>
 
-    <div class="gallery-hero fade-in">
-      <img src="images/hero.jpg" alt="Professional Construction & Landscaping - Brick restoration project in Toronto" loading="lazy">
-      <div class="gallery-hero-overlay">
-        <span>Brick Restoration &mdash; Toronto</span>
-      </div>
-    </div>
-
     <div class="gallery-grid fade-in">
-      <a href="https://www.instagram.com/professional_construction_inc/p/DXAv6vAijN_/" target="_blank" rel="noopener" class="gallery-card">
-        <span class="gallery-card-icon">&#9678;</span>
-        <h4>Brick Restoration</h4>
-        <p>Before &amp; after foundation brick repair in Downtown Toronto</p>
-        <span class="view-link">View on Instagram &rarr;</span>
-      </a>
-      <a href="https://www.instagram.com/professional_construction_inc/p/DWc2ddGFe1b/" target="_blank" rel="noopener" class="gallery-card">
-        <span class="gallery-card-icon">&#9635;</span>
-        <h4>Interior Renovation</h4>
-        <p>Complete interior remodel with new flooring, lighting &amp; sliding doors</p>
-        <span class="view-link">View on Instagram &rarr;</span>
-      </a>
-      <a href="https://www.instagram.com/professional_construction_inc/p/DWXyTsRFXoa/" target="_blank" rel="noopener" class="gallery-card">
-        <span class="gallery-card-icon">&#9638;</span>
-        <h4>Painting &amp; Prep</h4>
-        <p>Professional painting preparation and execution for homes</p>
-        <span class="view-link">View on Instagram &rarr;</span>
-      </a>
-      <a href="https://www.instagram.com/professional_construction_inc/p/DWVKc77lRdG/" target="_blank" rel="noopener" class="gallery-card">
-        <span class="gallery-card-icon">&#9649;</span>
-        <h4>Fence Installation</h4>
-        <p>Custom cedar fence build in Toronto with full landscaping</p>
-        <span class="view-link">View on Instagram &rarr;</span>
-      </a>
-      <a href="https://www.instagram.com/professional_construction_inc/p/DWVFrKbihmq/" target="_blank" rel="noopener" class="gallery-card">
-        <span class="gallery-card-icon">&#9681;</span>
-        <h4>Retaining Wall</h4>
-        <p>Before &amp; after retaining wall construction and repair</p>
-        <span class="view-link">View on Instagram &rarr;</span>
-      </a>
-      <a href="https://www.instagram.com/professional_construction_inc/p/DV9mYmYCgis/" target="_blank" rel="noopener" class="gallery-card">
-        <span class="gallery-card-icon">&#9633;</span>
-        <h4>Gazebo &amp; Cabana</h4>
-        <p>Custom backyard gazebo, deck &amp; landscape build in GTA</p>
-        <span class="view-link">View on Instagram &rarr;</span>
-      </a>
+      <div class="gallery-item gallery-feature">
+        <img src="images/office-renovation-complete.jpg" alt="Completed office renovation with new flooring and lighting" loading="lazy">
+        <div class="gallery-overlay"><span>Office Renovation</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/bathroom-hex-tile.jpg" alt="Bathroom with hexagonal tile flooring" loading="lazy">
+        <div class="gallery-overlay"><span>Bathroom Tile</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hex-tile-entry.jpg" alt="Hexagonal tile entryway installation" loading="lazy">
+        <div class="gallery-overlay"><span>Entryway Tile</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/finished-bedroom.jpg" alt="Finished bedroom with new flooring" loading="lazy">
+        <div class="gallery-overlay"><span>Interior Finish</span></div>
+      </div>
+      <div class="gallery-item gallery-feature">
+        <img src="images/attic-renovation.jpg" alt="Attic renovation with drywall and ceiling work" loading="lazy">
+        <div class="gallery-overlay"><span>Attic Renovation</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/bathroom-shower-tile.jpg" alt="Bathroom shower with hexagonal tile" loading="lazy">
+        <div class="gallery-overlay"><span>Shower Tile Work</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/service-vehicle.jpg" alt="Professional Construction branded service vehicle" loading="lazy">
+        <div class="gallery-overlay"><span>Our Team</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hero.jpg" alt="Brick restoration project" loading="lazy">
+        <div class="gallery-overlay"><span>Brick Restoration</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/hallway-flooring.jpg" alt="Hallway flooring installation" loading="lazy">
+        <div class="gallery-overlay"><span>Flooring</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/finished-flooring.jpg" alt="Finished room with new flooring" loading="lazy">
+        <div class="gallery-overlay"><span>Finished Space</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/drywall-progress.jpg" alt="Drywall installation in progress" loading="lazy">
+        <div class="gallery-overlay"><span>Drywall Work</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/interior-fixtures.jpg" alt="Interior with new fixtures and flooring" loading="lazy">
+        <div class="gallery-overlay"><span>Interior Fixtures</span></div>
+      </div>
     </div>
 
     <div class="gallery-cta fade-in">
@@ -1087,6 +1045,16 @@
           <div class="contact-detail-text">
             <strong>Phone</strong>
             <a href="tel:6472691014">647-269-1014</a>
+          </div>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="contact-detail-text">
+            <strong>Email</strong>
+            <a href="mailto:Professionalinc2025@gmail.com">Professionalinc2025@gmail.com</a>
           </div>
         </div>
 
@@ -1173,7 +1141,7 @@
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-    // Form submit
+    // Form submit - sends email via mailto
     function handleSubmit(e) {
       e.preventDefault();
       const form = e.target;
@@ -1183,8 +1151,9 @@
       const service = form.service.value;
       const message = form.message.value;
 
-      const body = `Name: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AService: ${service}%0A%0A${message}`;
-      window.location.href = `sms:6472691014&body=${body}`;
+      const subject = encodeURIComponent(`Website Inquiry - ${service}`);
+      const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\n\n${message}`);
+      window.location.href = `mailto:Professionalinc2025@gmail.com?subject=${subject}&body=${body}`;
     }
   </script>
 </body>
