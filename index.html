@@ -676,13 +676,19 @@
     /* ── ANIMATIONS ── */
     .fade-in {
       opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Gallery always visible to prevent lazy-load deadlock */
+    .gallery .fade-in {
+      opacity: 1;
+      transform: none;
     }
 
     /* ── MOBILE NAV ── */
@@ -936,51 +942,51 @@
 
     <div class="gallery-grid fade-in">
       <div class="gallery-item gallery-feature">
-        <img src="images/office-renovation-complete.jpg" alt="Completed office renovation with new flooring and lighting" loading="lazy">
+        <img src="images/office-renovation-complete.jpg" alt="Completed office renovation with new flooring and lighting">
         <div class="gallery-overlay"><span>Office Renovation</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/bathroom-hex-tile.jpg" alt="Bathroom with hexagonal tile flooring" loading="lazy">
+        <img src="images/bathroom-hex-tile.jpg" alt="Bathroom with hexagonal tile flooring">
         <div class="gallery-overlay"><span>Bathroom Tile</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/hex-tile-entry.jpg" alt="Hexagonal tile entryway installation" loading="lazy">
+        <img src="images/hex-tile-entry.jpg" alt="Hexagonal tile entryway installation">
         <div class="gallery-overlay"><span>Entryway Tile</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/finished-bedroom.jpg" alt="Finished bedroom with new flooring" loading="lazy">
+        <img src="images/finished-bedroom.jpg" alt="Finished bedroom with new flooring">
         <div class="gallery-overlay"><span>Interior Finish</span></div>
       </div>
       <div class="gallery-item gallery-feature">
-        <img src="images/attic-renovation.jpg" alt="Attic renovation with drywall and ceiling work" loading="lazy">
+        <img src="images/attic-renovation.jpg" alt="Attic renovation with drywall and ceiling work">
         <div class="gallery-overlay"><span>Attic Renovation</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/bathroom-shower-tile.jpg" alt="Bathroom shower with hexagonal tile" loading="lazy">
+        <img src="images/bathroom-shower-tile.jpg" alt="Bathroom shower with hexagonal tile">
         <div class="gallery-overlay"><span>Shower Tile Work</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/service-vehicle.jpg" alt="Professional Construction branded service vehicle" loading="lazy">
+        <img src="images/service-vehicle.jpg" alt="Professional Construction branded service vehicle">
         <div class="gallery-overlay"><span>Our Team</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/hero.jpg" alt="Brick restoration project" loading="lazy">
+        <img src="images/hero.jpg" alt="Brick restoration project">
         <div class="gallery-overlay"><span>Brick Restoration</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/hallway-flooring.jpg" alt="Hallway flooring installation" loading="lazy">
+        <img src="images/hallway-flooring.jpg" alt="Hallway flooring installation">
         <div class="gallery-overlay"><span>Flooring</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/finished-flooring.jpg" alt="Finished room with new flooring" loading="lazy">
+        <img src="images/finished-flooring.jpg" alt="Finished room with new flooring">
         <div class="gallery-overlay"><span>Finished Space</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/drywall-progress.jpg" alt="Drywall installation in progress" loading="lazy">
+        <img src="images/drywall-progress.jpg" alt="Drywall installation in progress">
         <div class="gallery-overlay"><span>Drywall Work</span></div>
       </div>
       <div class="gallery-item">
-        <img src="images/interior-fixtures.jpg" alt="Interior with new fixtures and flooring" loading="lazy">
+        <img src="images/interior-fixtures.jpg" alt="Interior with new fixtures and flooring">
         <div class="gallery-overlay"><span>Interior Fixtures</span></div>
       </div>
     </div>
